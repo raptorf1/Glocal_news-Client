@@ -3,6 +3,7 @@ import { Form, Container, Button, Message, Dropdown, Header } from 'semantic-ui-
 import axios from 'axios'
 import { COUNTRY_OPTIONS } from '../Modules/countriesData'
 import { getCategories } from '../Modules/categoriesData'
+import { connect } from 'react-redux'
 
 class WriteArticle extends Component {
   state = {
@@ -18,12 +19,16 @@ class WriteArticle extends Component {
     country: '',
     city: '',
     success_message: false,
-    error_message: false
+    error_message: false,
+    user_id: ''
   }
 
   async componentDidMount() {
     let categories = await getCategories()
-    this.setState({ categories: categories });
+    this.setState({ 
+      categories: categories,
+      user_id: this.props.currentUser.attributes.id
+     });
   }
 
   onChangeHandler = (e) => {
@@ -166,4 +171,10 @@ class WriteArticle extends Component {
   }
 }
 
-export default WriteArticle
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.reduxTokenAuth.currentUser
+  }
+}
+
+export default (connect(mapStateToProps)(WriteArticle))
