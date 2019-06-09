@@ -19,6 +19,7 @@ class HeaderMain extends Component {
   handleItemClick = (e) => {
     const category = e.target.id[0].toLowerCase() + e.target.id.slice(1);
     this.setState({ activeItem: category })
+    window.scrollTo(0, 0)
   }
 
   signOut = (e) => {

@@ -13,6 +13,7 @@ class ListOfUnpublishedArticles extends Component {
   }
 
   async componentDidMount() {
+    window.scrollTo(0, 0);
     let categories = await getCategoryNames()
     this.setState({
       categories: categories,
@@ -82,9 +83,21 @@ class ListOfUnpublishedArticles extends Component {
               {articleList}
             </Grid.Column>
             <Grid.Column width={4}>
-              <Segment vertical textAlign='center' style={{ background: 'grey', height: '100%' }}>
-                <p>Ads placeholder</p>
-              </Segment>
+              <div>
+                <a href="https://www.craftacademy.se/">
+                  <img className="ad" src="ad_craft.png" />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.craftacademy.se/">
+                  <img className="ad" src="ad_placeholder.png" />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.craftacademy.se/">
+                  <img className="ad" src="ad_placeholder.png" />
+                </a>
+              </div>
             </Grid.Column>
           </Grid>
         </Container>

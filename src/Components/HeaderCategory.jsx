@@ -10,6 +10,7 @@ class HeaderCategory extends Component {
   }
 
   async componentDidMount() {
+    window.scrollTo(0, 0);
     let categories = await getCategoryNames()
     this.setState({
       categories: categories,

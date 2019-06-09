@@ -16,6 +16,7 @@ class ArticlesByCategory extends Component {
   }
 
   async componentDidMount() {
+    window.scrollTo(0, 0);
     let categories = await getCategoryNames()
     let categoryName = this.props.location.pathname.substring(1)
     this.setState({
@@ -28,12 +29,13 @@ class ArticlesByCategory extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    window.scrollTo(0, 0);
     let categoryName = this.props.location.pathname.substring(1)
     if (prevProps.location.pathname.substring(1) !== categoryName) {
       this.setState({ categoryName: categoryName })
     }
   }
-
+ 
   render() {
     let category = this.state.categoryName.charAt(0).toUpperCase() + this.state.categoryName.slice(1);
     let filteredArticlesByCategory = []
@@ -152,9 +154,21 @@ class ArticlesByCategory extends Component {
             </Grid.Column>
 
             <Grid.Column width={4}>
-              <Segment vertical textAlign='center' className='ads_placeholder'>
-                <p>Ads placeholder</p>
-              </Segment>
+              <div>
+                <a href="https://www.craftacademy.se/">
+                  <img className="ad" src="ad_craft.png" />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.craftacademy.se/">
+                  <img className="ad" src="ad_placeholder.png" />
+                </a>
+              </div>
+              <div>
+                <a href="https://www.craftacademy.se/">
+                  <img className="ad" src="ad_placeholder.png" />
+                </a>
+              </div>
             </Grid.Column>
           </Grid>
         </Container>

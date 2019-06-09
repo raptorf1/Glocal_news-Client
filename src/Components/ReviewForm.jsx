@@ -26,6 +26,7 @@ class ReviewForm extends Component {
   }
 
   onSubmit = (e) => {
+    window.scrollTo(0, 0);
     e.preventDefault();
     const path = `/api/v1/articles/${this.props.id}/reviews`
     const payload = {
