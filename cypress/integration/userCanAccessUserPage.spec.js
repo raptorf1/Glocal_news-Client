@@ -38,6 +38,6 @@ describe('User can view user page', () => {
     cy.contains('Hello Boa. This is your private page.')
     cy.contains('Your published articles')
     cy.contains('Your unpublished articles')
-    cy.contains('Reviews you have left')
+    cy.contains('Your declined articles')
   })
 })
