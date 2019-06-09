@@ -33,6 +33,7 @@ class WriteArticle extends Component {
   }
 
   onSubmit = (e) => {
+    window.scrollTo(0, 0);
     e.preventDefault();
     const path = '/api/v1/articles'
     const payload = { ...this.state }

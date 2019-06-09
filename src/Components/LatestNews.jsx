@@ -55,7 +55,7 @@ class LatestNews extends Component {
             }
 
             return (
-              <Segment id={article.id} color={color} key={article.id}>
+              <Segment id={article.id} key={article.id}>
                 <Grid columns={2}>
                   <Grid.Column floated='left' width={11}>
                     <p>{momentDate} | {momentTime} </p>
