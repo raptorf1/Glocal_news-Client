@@ -76,6 +76,8 @@ class HeaderMain extends Component {
         <>
           <Menu.Item
             key='welcome'
+            as={Link}
+            to={{ pathname: '/user-page'}}
             name={`Welcome ${name}`}
             id='welcome'
           />

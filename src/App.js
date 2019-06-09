@@ -5,6 +5,7 @@ import ListOfUnpublishedArticles from './Components/ListOfUnpublishedArticles'
 import { Switch, Route, Redirect } from 'react-router-dom'
 import FullArticle from './Components/FullArticle'
 import ArticlesByCategory from './Components/ArticlesByCategory'
+import UserPage from './Components/UserPage'
 import { getCategoryPaths } from './Modules/categoriesData'
 import LoginForm from './Components/LoginForm';
 import SignUpForm from './Components/SignUpForm';
@@ -38,6 +39,7 @@ class App extends Component {
           <Route exact path='/full-article' component={requireSignIn(FullArticle)}></Route>
           <Route exact path='/login' component={LoginForm}></Route>
           <Route exact path='/signup' component={SignUpForm}></Route>
+          <Route exact path='/user-page' component={UserPage}></Route>
         </Switch>
       </>
     );
