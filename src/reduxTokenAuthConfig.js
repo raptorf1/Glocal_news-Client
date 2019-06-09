@@ -1,9 +1,10 @@
 import { generateAuthActions } from 'redux-token-auth'
 
 const config = {
-  authUrl: "https://glocal-news.herokuapp.com/api/v1/auth",
+  authUrl: "http://localhost:3002/api/v1/auth",
   userAttributes: {
-    uid: 'uid'
+    uid: 'uid',
+    id: 'id'
   },
   userRegistrationAttributes: {
     password_confirmation: 'password_confirmation'
