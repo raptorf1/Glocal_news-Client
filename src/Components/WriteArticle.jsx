@@ -24,6 +24,7 @@ class WriteArticle extends Component {
   }
 
   async componentDidMount() {
+    window.scrollTo(0, 0);
     let categories = await getCategories()
     this.setState({ 
       categories: categories,

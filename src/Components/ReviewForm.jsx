@@ -28,7 +28,6 @@ class ReviewForm extends Component {
   }
 
   onSubmit = (e) => {
-    window.scrollTo(0, 0);
     e.preventDefault();
     const path = `/api/v1/articles/${this.props.id}/reviews`
     const payload = {
@@ -123,8 +122,8 @@ class ReviewForm extends Component {
     return (
       <>
         {review_error_message}
-        {review_form}
         {success_message}
+        {review_form}
       </>
     )
   }
