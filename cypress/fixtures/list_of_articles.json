@@ -12,7 +12,17 @@
       "id": 1,
       "name": "Politics"
     },
-    "reviews": [],
+    "user": {
+      "id": 1,
+      "uid": "boa@mail.com"
+    },
+    "reviews": [
+      {
+        "id": 1,
+        "score": 4,
+        "comment": "Go back to school!"
+      }
+    ],
     "published": false,
     "country": "Sweden"
   },
@@ -27,6 +37,10 @@
     "category": {
       "id": 1,
       "name": "Politics"
+    },
+    "user": {
+      "id": 1,
+      "uid": "boa@mail.com"
     },
     "reviews": [
       {
@@ -60,6 +74,10 @@
       "id": 3,
       "name": "Arts"
     },
+    "user": {
+      "id": 1,
+      "uid": "boa@mail.com"
+    },
     "reviews": [],
     "published": true,
     "country": "Jamaica"
@@ -75,6 +93,10 @@
     "category": {
       "id": 1,
       "name": "Politics"
+    },
+    "user": {
+      "id": 1,
+      "uid": "boa@mail.com"
     },
     "reviews": [],
     "published": true,

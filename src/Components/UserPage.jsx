@@ -32,7 +32,7 @@ class UserPage extends Component {
       let declinedArticles = []
   
       this.state.articles.map(article => {
-        if (article.user.id == this.props.currentUser.attributes.id) {
+        if (article.user.id === this.props.currentUser.attributes.id) {
           if (article.published === true) {
             return publishedArticles.push(article)
           } else if (article.published === false && article.reviews.length < 3) {
@@ -82,15 +82,15 @@ class UserPage extends Component {
       <Container>
         <h3>Hello {upperName}. This is your private page.</h3>
         <Grid columns='equal'>
-          <Grid.Column>
+          <Grid.Column id="published_articles">
             <p>Your published articles</p>
             {publishedArticlesToDisplay}
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column id="unpublished_articles">
             <p>Your unpublished articles</p>
             {unpublishedArticlesToDisplay}
           </Grid.Column>
-          <Grid.Column>
+          <Grid.Column id="declined_articles">
             <p>Your declined articles</p>
             {declinedArticlesToDisplay}
           </Grid.Column>

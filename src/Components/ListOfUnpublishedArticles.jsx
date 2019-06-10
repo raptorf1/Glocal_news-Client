@@ -84,17 +84,17 @@ class ListOfUnpublishedArticles extends Component {
             </Grid.Column>
             <Grid.Column width={4}>
               <div>
-                <a href="https://www.craftacademy.se/" target="_blank">
+                <a href="https://www.craftacademy.se/" target="_blank" rel="noopener noreferrer">
                   <img className="ad" alt="craft-academy-ad" src="ad_craft.png" />
                 </a>
               </div>
               <div>
-                <a href="https://www.craftacademy.se/" target="_blank">
+                <a href="https://www.craftacademy.se/" target="_blank" rel="noopener noreferrer">
                   <img className="ad" alt="empty-ad-placeholder" src="ad_placeholder.png" />
                 </a>
               </div>
               <div>
-                <a href="https://www.craftacademy.se/" target="_blank">
+                <a href="https://www.craftacademy.se/" target="_blank" rel="noopener noreferrer">
                   <img className="ad" alt="empty-ad-placeholder" src="ad_placeholder.png" />
                 </a>
               </div>

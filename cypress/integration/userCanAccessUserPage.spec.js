@@ -36,8 +36,18 @@ describe('User can view user page', () => {
     cy.wait(3000)
     cy.get('#welcome').click()
     cy.contains('Hello Boa. This is your private page.')
-    cy.contains('Your published articles')
-    cy.contains('Your unpublished articles')
-    cy.contains('Your declined articles')
+    cy.get('#published_articles').within(() => {
+      cy.contains('Your published articles')
+      cy.contains('A Day in Rome')
+      cy.contains('A Day in Thessaloniki')
+    })
+    cy.get('#unpublished_articles').within(() => {
+      cy.contains('Your unpublished articles')
+      cy.contains('Rainy day')
+    })
+    cy.get('#declined_articles').within(() => {
+      cy.contains('Your declined articles')
+      cy.contains('A Day in Paris')
+    })
   })
 })
