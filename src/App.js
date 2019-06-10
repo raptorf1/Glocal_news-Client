@@ -10,6 +10,7 @@ import { getCategoryPaths } from './Modules/categoriesData'
 import LoginForm from './Components/LoginForm';
 import SignUpForm from './Components/SignUpForm';
 import { generateRequireSignInWrapper } from 'redux-token-auth';
+import { Icon} from 'semantic-ui-react';
 
 
 const requireSignIn = generateRequireSignInWrapper({
@@ -27,7 +28,14 @@ class App extends Component {
     this.setState({ paths: categoryPaths })
   }
 
+ 
+
   render() {
+    function handleClick(e) {
+      e.preventDefault();
+      window.scrollTo(0, 0);
+    }
+  
     return (
       <>
         <HeaderMain />
@@ -41,6 +49,9 @@ class App extends Component {
           <Route exact path='/signup' component={SignUpForm}></Route>
           <Route exact path='/user-page' component={UserPage}></Route>
         </Switch>
+        <div className='scroll_to_top '>
+        <Icon link="#" name='angle up' size='huge' color='grey' onClick={ handleClick }/>
+        </div>
       </>
     );
   }

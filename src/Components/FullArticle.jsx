@@ -21,6 +21,7 @@ class FullArticle extends Component {
   };
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     let mainPath = '/api/v1/articles/'
     let articlePath = (this.props.location.state.id)
     axios.get(mainPath + articlePath).then(response => {
