@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Form, Dropdown, Message, Segment } from 'semantic-ui-react'
 import axios from 'axios'
+import { connect } from 'react-redux'
 
 
 class ReviewForm extends Component {
@@ -11,7 +12,8 @@ class ReviewForm extends Component {
     review_error_message: false,
     review_success_message: false,
     review_form: true,
-    article_id: this.props.id
+    article_id: this.props.id,
+
   }
 
 
@@ -26,12 +28,12 @@ class ReviewForm extends Component {
   }
 
   onSubmit = (e) => {
-    window.scrollTo(0, 0);
     e.preventDefault();
     const path = `/api/v1/articles/${this.props.id}/reviews`
     const payload = {
       score: this.state.score,
       comment: this.state.comment,
+      user_id: this.props.currentUser.attributes.id
     }
     axios.post(path, payload)
       .then(() =>
@@ -120,11 +122,17 @@ class ReviewForm extends Component {
     return (
       <>
         {review_error_message}
-        {review_form}
         {success_message}
+        {review_form}
       </>
     )
   }
 }
 
-export default ReviewForm
+const mapStateToProps = (state) => {
+  return {
+    currentUser: state.reduxTokenAuth.currentUser
+  }
+}
+
+export default (connect(mapStateToProps)(ReviewForm))
