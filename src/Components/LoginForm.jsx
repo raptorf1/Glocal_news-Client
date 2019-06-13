@@ -93,17 +93,17 @@ class LoginForm extends Component {
           <Grid.Column width={4}>
               <div>
                 <a href="https://www.craftacademy.se/">
-                  <img className="ad" src="ad_craft.png" />
+                  <img className="ad" alt="craft-academy-ad" src="ad_craft.png" />
                 </a>
               </div>
               <div>
                 <a href="https://www.craftacademy.se/">
-                  <img className="ad" src="ad_placeholder.png" />
+                  <img className="ad" alt="empty-ad-placeholder" src="ad_placeholder.png" />
                 </a>
               </div>
               <div>
                 <a href="https://www.craftacademy.se/">
-                  <img className="ad" src="ad_placeholder.png" />
+                  <img className="ad" alt="empty-ad-placeholder" src="ad_placeholder.png" />
                 </a>
               </div>
             </Grid.Column>
